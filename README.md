@@ -36,9 +36,9 @@ To better understand the concepts involved in this project, it's important to fa
 
 <u>Text Analysis</u>:
 
-The first step in our process was an in-depth analysis of the text of each author. This involved performing a sentiment analysis and a sentence length analysis.
+The first step in the process was an in-depth analysis of the text of each author. This involved performing a sentiment analysis and a sentence length analysis.
 
-Sentiment analysis, as shown in Figure 1, provides insights into the emotional tone throughout Jane Austen's books. Understanding the sentiment of the text is critical when developing a text generation model. The sentiment embedded in the author's writing style can influence the choice of words, phrases, and overall narrative arc. By capturing this sentiment in our model, we can generate text that not only mimics the vocabulary and grammar of Jane Austen, but also resonates with the same emotional tone that pervades her works.
+Sentiment analysis, as shown in Figure 1, provides insights into the emotional tone throughout Jane Austen's books. Understanding the sentiment of the text is critical when developing a text generation model. The sentiment embedded in the author's writing style can influence the choice of words, phrases, and overall narrative arc. By capturing this sentiment in the model, we can generate text that not only mimics the vocabulary and grammar of Jane Austen, but also resonates with the same emotional tone that pervades her works.
 
 ![Sentiment Analysis - Figure 1](images/image3.png)
 
@@ -46,7 +46,7 @@ Sentiment analysis, as shown in Figure 1, provides insights into the emotional t
 
 
 
-I also analyzed the distribution of sentence lengths by character, as visualized in Figure 2. The sentence length can give us clues about an author's writing style, including their use of long, complex sentences versus short, succinct ones. By incorporating this understanding into our model, we can generate text that mirrors the rhythmic flow and syntactic structure typical of each author's writing.
+I also analyzed the distribution of sentence lengths by character, as visualized in Figure 2. The sentence length can give us clues about an author's writing style, including their use of long, complex sentences versus short, succinct ones. By incorporating this understanding into my model, we can generate text that mirrors the rhythmic flow and syntactic structure typical of each author's writing.
 
 ![Sentence Length Analysis - Figure 2](images/image2.png)
 
