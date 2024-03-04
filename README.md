@@ -79,5 +79,5 @@ In addition to the LSTMs, I also incorporated Dropout layers into the model to p
 
 <u>Grammar Correction</u>:
 
-To improve the grammatical correctness of the generated text, I introduced a post-processing step using a python package that would take our generated text and correct grammatical mistakes or misspellings. This package is like a grammar teacher who corrects the text produced by the model. After the text generation, this tool checks the grammar and makes necessary corrections, enhancing the readability and coherence of the final output.
+To improve the grammatical correctness of the generated text, I introduced a post-processing step using a python package that would take my generated text and correct grammatical mistakes or misspellings. This package is like a grammar teacher who corrects the text produced by the model. After the text generation, this tool checks the grammar and makes necessary corrections, enhancing the readability and coherence of the final output.
 
