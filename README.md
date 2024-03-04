@@ -34,8 +34,50 @@ To better understand the concepts involved in this project, it's important to fa
 
 ## Methodology
 
+<u>Text Analysis</u>:
+
 The first step in our process was an in-depth analysis of the text of each author. This involved performing a sentiment analysis and a sentence length analysis.
 
 Sentiment analysis, as shown in Figure 1, provides insights into the emotional tone throughout Jane Austen's books. Understanding the sentiment of the text is critical when developing a text generation model. The sentiment embedded in the author's writing style can influence the choice of words, phrases, and overall narrative arc. By capturing this sentiment in our model, we can generate text that not only mimics the vocabulary and grammar of Jane Austen, but also resonates with the same emotional tone that pervades her works.
 
-![Sentiment Analysis](images/image3.png)
+![Sentiment Analysis - Figure 1](images/image3.png)
+
+**_Figure 1, Sentiment Analysis of Jane Austen_**
+
+
+
+I also analyzed the distribution of sentence lengths by character, as visualized in Figure 2. The sentence length can give us clues about an author's writing style, including their use of long, complex sentences versus short, succinct ones. By incorporating this understanding into our model, we can generate text that mirrors the rhythmic flow and syntactic structure typical of each author's writing.
+
+![Sentence Length Analysis - Figure 2](images/image2.png)
+
+**_Figure 2, Sentence Lengths by Character_**
+
+
+<u>Model Structure</u>:
+
+The model was based on a type of Recurrent Neural Network called Gated Recurrent Unit (GRU). While GRUs have been proven to perform well on certain tasks, I believed that Long Short-Term Memory (LSTM) networks, another type of RNN, would better capture the complex stylistic nuances of the authors in question.
+
+Hence, the decision to build an LSTM-based model. I introduced two LSTM layers into the architecture. To explain this decision with an analogy, imagine the model as a team of two detectives working together. The first LSTM layer acts like the first detective who reads the text and passes on the important clues to the second detective. The second LSTM layer takes these clues, combines them with its understanding of the text, and makes the final predictions. By working together, they can understand the context better and make more accurate predictions.
+
+The model structure was as follows and is visualized in Figure 3 below:
+
+![Model Structure - Figure 3](images/image1.png)
+
+**_Figure 3, A stacked LSTM_**
+
+
+1. <u>An Embedding Layer</u>: This layer transforms the input data into dense vectors of fixed size that's suitable for a neural network. It's like translating a language that the network doesn't understand into a language it can.
+
+2. <u>First LSTM Layer</u>: This layer reads the text and tries to understand the context and style. It then passes on this understanding to the next layer.
+
+3. <u>Second LSTM Layer</u>: This layer takes the context from the first LSTM layer, adds its understanding, and makes predictions about the next characters.
+
+4. <u>A Dense Layer</u>: This layer transforms the LSTM output into the final output shape that we need. It's like the final verdict given by the model.
+
+In addition to the LSTMs, I also incorporated Dropout layers into the model to prevent overfitting. These layers randomly set a fraction of the input units to 0 at each update during training, which helps to avoid overfitting and copying the text of the author’s writings.
+
+
+<u>Grammar Correction</u>:
+
+To improve the grammatical correctness of the generated text, I introduced a post-processing step using a python package that would take our generated text and correct grammatical mistakes or misspellings. This package is like a grammar teacher who corrects the text produced by the model. After the text generation, this tool checks the grammar and makes necessary corrections, enhancing the readability and coherence of the final output.
+
